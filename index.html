@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Unfiltered | The Feed</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="announcement"><span class="live-dot"></span> YOUR CAMPUS, YOUR VOICE <span class="announcement-right">Anonymous by design 👻</span></div>
+
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-mark">CU</span><span>campus<span class="brand-light">unfiltered</span><small>THE CAMPUS CONVERSATION</small></span></a>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav id="main-nav">
+      <a class="active" href="index.html">The Feed</a>
+      <a href="about.html">Our Rules</a>
+      <a class="nav-cta" href="confess.html">＋ Drop a confession</a>
+    </nav>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1800&q=85" alt="Students walking around a university campus">
+      <div class="hero-shade"></div>
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="live-dot"></span> THE UNOFFICIAL CAMPUS NOTICEBOARD</p>
+        <h1>Say it here.<br><span>Keep your name out of it.</span></h1>
+        <p>Campus stories, hot takes, tiny dramas and big thoughts. No names. No pressure. Just the conversation.</p>
+        <a class="button" href="confess.html">Drop your first confession ↗</a>
+      </div>
+      <div class="sticker">NO NAMES.<br>JUST VIBES. ✳</div>
+    </section>
+
+    <section class="perks">
+      <div><span>✦</span><p><b>Real campus talk</b><small>The stuff people actually think</small></p></div>
+      <div><span>◉</span><p><b>Stay anonymous</b><small>Your identity isn't the story</small></p></div>
+      <div><span>↗</span><p><b>Join the conversation</b><small>Vote for posts you feel</small></p></div>
+    </section>
+
+    <div class="layout">
+      <section class="feed-column">
+        <div class="section-heading">
+          <div><p class="eyebrow purple">STRAIGHT FROM CAMPUS</p><h2>The Feed <span class="count-pill" id="post-count">0 posts</span></h2></div>
+          <span class="sparkle">✳</span>
+        </div>
+
+        <div class="tools">
+          <label class="search"><span>⌕</span><input id="search-input" type="search" placeholder="Search the campus tea..." aria-label="Search posts"></label>
+          <label class="sort-label"><span class="sr-only">Sort posts</span>
+            <select id="sort-select">
+              <option value="trending">🔥 Trending</option>
+              <option value="newest">✦ Newest first</option>
+              <option value="most-commented">💬 Most discussed</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="filters" id="filter-row">
+          <button class="chip selected" data-category="All">✳ All posts</button>
+          <button class="chip" data-category="Academics">📚 Academics</button>
+          <button class="chip" data-category="Campus Life">🏫 Campus life</button>
+          <button class="chip" data-category="Relationships">💌 Relationships</button>
+          <button class="chip" data-category="Hot Takes">🔥 Hot takes</button>
+          <button class="chip" data-category="Funny">😂 Funny</button>
+        </div>
+
+        <div class="feed-status"><span><span class="live-dot"></span> The campus conversation</span><span id="feed-status-count">Fresh takes, zero names</span></div>
+        <div id="post-list" class="post-list" aria-live="polite"></div>
+
+        <div id="empty-state" class="empty hidden">
+          <span>🕵️</span><h3>No confessions found</h3>
+          <p>Try another search or category. The tea may be hiding.</p>
+          <button id="clear-filters" class="button outline" type="button">Clear filters</button>
+        </div>
+
+        <div class="end-note">You've reached the end of this little corner of campus.<br><a href="confess.html">Have something to add? <b>Drop it here ↗</b></a></div>
+      </section>
+
+      <aside class="sidebar">
+        <section class="side-card promo">
+          <span class="big-emoji">✍️</span><p class="eyebrow">GOT SOMETHING TO SAY?</p>
+          <h3>Your secret's safe<br>in the draft box.</h3>
+          <p>Confess, vent, celebrate or start a conversation. Keep it respectful and leave names out of it.</p>
+          <a class="button full" href="confess.html">Write a confession ↗</a>
+        </section>
+
+        <section class="side-card trending-card">
+          <div class="side-heading"><h3>🔥 What's bubbling</h3><span class="mini-live">LIVE DEMO</span></div>
+          <p class="side-muted">Tap a topic to explore the conversation.</p>
+          <div id="trending-topics" class="trending-topics"></div>
+        </section>
+
+        <section class="side-card photo-card">
+          <div class="photo-wrap"><img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=900&q=80" alt="University campus building" loading="lazy"><span>CAMPUS MOMENT</span></div>
+          <div class="card-copy"><p class="eyebrow purple">THE PLACE WE SHARE</p><h3>Every campus has a story.</h3><p>Little wins, late nights, long lectures. This space is for all of it.</p></div>
+        </section>
+
+        <section class="side-card rules">
+          <h3>🛡️ Keep it cool</h3>
+          <ul><li>Protect people's privacy</li><li>Criticise ideas, not identities</li><li>No bullying or threats</li><li>Don't post private information</li></ul>
+          <a href="about.html">Read the community rules ↗</a>
+        </section>
+        <p class="tiny-note">👻 <span><b>Anonymous doesn't mean unkind.</b><br>Make this a space you'd feel safe reading.</span></p>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <a class="brand footer-brand" href="index.html"><span class="brand-mark">CU</span><span>campus<span class="brand-light">unfiltered</span><small>THE CAMPUS CONVERSATION</small></span></a>
+    <p>Made for campus voices, not campus drama. © 2026</p>
+    <a href="about.html">Community rules</a>
+  </footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
